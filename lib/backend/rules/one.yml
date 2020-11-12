@@ -1,0 +1,9 @@
+/v1/users*: /600/users$1
+/v1/posts*: /660/posts$1
+/v1/tasks-items/rename*: /660/tasks-items/rename$1
+/v1/tasks-items*: /660/tasks-items$1
+/v1/tasks*: /660/tasks$1
+/v1/register: /register
+/v1/login: /login
+/v1/upload: /upload
+/v1/reset: /reset
