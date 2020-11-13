@@ -9,6 +9,11 @@ info:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0
 host: 18.139.50.74:8080
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    in: header
+    name: Authorization
 basePath: /
 tags:
   - name: auth-controller
@@ -20,6 +25,8 @@ tags:
 paths:
   /checklist:
     get:
+      security:
+        - Bearer: []
       tags:
         - checklist-controller
       summary: getAll
@@ -39,6 +46,8 @@ paths:
           description: Not Found
       deprecated: false
     post:
+      security:
+        - Bearer: []
       tags:
         - checklist-controller
       summary: save
@@ -70,6 +79,8 @@ paths:
       deprecated: false
   "/checklist/{checklistId}":
     delete:
+      security:
+        - Bearer: []
       tags:
         - checklist-controller
       summary: deleteById
@@ -97,6 +108,8 @@ paths:
       deprecated: false
   /item:
     post:
+      security:
+        - Bearer: []
       tags:
         - checklist-item-controller
       summary: save
@@ -128,6 +141,8 @@ paths:
       deprecated: false
   "/item/rename/{id}":
     put:
+      security:
+        - Bearer: []
       tags:
         - checklist-item-controller
       summary: renameItem
@@ -165,6 +180,8 @@ paths:
       deprecated: false
   "/item/{id}":
     get:
+      security:
+        - Bearer: []
       tags:
         - checklist-item-controller
       summary: getById
@@ -191,6 +208,8 @@ paths:
           description: Not Found
       deprecated: false
     put:
+      security:
+        - Bearer: []
       tags:
         - checklist-item-controller
       summary: updateItemStatus
@@ -221,6 +240,8 @@ paths:
           description: Not Found
       deprecated: false
     delete:
+      security:
+        - Bearer: []
       tags:
         - checklist-item-controller
       summary: deleteItem
