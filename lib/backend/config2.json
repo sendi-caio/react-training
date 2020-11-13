@@ -1,0 +1,18 @@
+{
+  "urls": [
+    {
+      "name": "One",
+      "url": "http://127.0.0.1:3000/spec/all.yaml"
+    },
+    {
+      "name": "Two",
+      "url": "http://127.0.0.1:3000/spec/all.yaml"
+    }
+  ],
+  "urls.primaryName": "Two",
+  "url": "http://127.0.0.1:3000/spec/all.yaml",
+  "dom_id": "#swagger",
+  "docExpansion": "none",
+  "deepLinking": true,
+  "layout": "StandaloneLayout"
+}
