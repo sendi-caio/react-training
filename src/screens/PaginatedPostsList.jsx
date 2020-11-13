@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import DashboardLayout from '../layouts/Dashboard'

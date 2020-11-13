@@ -12,6 +12,12 @@ rules:
   semi:
     - 2
     - never
+  quotes:
+    - 2
+    - single
+  jsx-quotes:
+    - 2
+    - prefer-double
   react/jsx-pascal-case: 2
   react/jsx-filename-extension:
     - 1
