@@ -1,0 +1,4 @@
+docs
+build
+*.test.js
+jest.config.js

@@ -6,6 +6,7 @@ import { materialDark as style } from 'react-syntax-highlighter/dist/esm/styles/
 import 'react-syntax-highlighter/dist/esm/styles/prism/prism'
 import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx'
 import gfm from 'remark-gfm'
+import toc from 'remark-toc'
 import Layout from './Layout'
 import Box from './Box'
 
@@ -29,7 +30,10 @@ function Home() {
       <Box>
         Test
       </Box>
-      <ReactMarkdown plugins={[[gfm, {singleTilde: false}]]} renderers={renderers}>
+      <button type="button" className="btn btn-primary">
+        <i className="far fa-eye" />
+      </button>
+      <ReactMarkdown plugins={[[gfm, {singleTilde: false}], toc]} renderers={renderers}>
         {text}
       </ReactMarkdown>
     </Layout>
