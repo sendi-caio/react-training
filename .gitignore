@@ -1,0 +1,10 @@
+/server/uploads/*
+/data/api/*
+/data/db/*
+/data/rule/*
+/data/upload/*
+/build/*
+/node_modules
+/dist
+!.gitkeep
+.env

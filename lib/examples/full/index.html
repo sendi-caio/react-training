@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+
+    <link id="default-theme" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <style>
+      button:focus {
+        outline: none !important;
+      }
+    </style>
+    <style>
+      .lmq-parent > div {
+        width: 100px;
+        height: 100px;
+        background-color: grey;
+      }
+      div.lmq-3 {
+        width: 200px;
+        height: 200px;
+        display: flex;
+      }
+      .lmq-3 > div {
+        flex: 1;
+      }
+      .lmq-3 > div:first-child {
+        background-color: green;
+      }
+      .lmq-3 > div:last-child {
+        background-color: yellow;
+      }
+      div.lmq-4 {
+        width: 500px;
+        height: 500px;
+        background-color: white;
+      }
+      .lmq-4 > ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 300px;
+        background-color: pink;
+      }
+      .lmq-4 > ul::after {
+        content: " ";
+        display: block;
+        clear: both;
+        width: 0;
+        height: 0;
+      }
+      .lmq-4 > ul li {
+        margin: 0;
+        padding: 0;
+        float: left;
+        width: 100px;
+      }
+      @media only screen and (max-width: 599px) {
+        div.lmq-1 {
+          background-color: lightblue;
+        }
+        div.lmq-3 {
+          flex-direction: column;
+        }
+        div.lmq-4 > ul li {
+          float: none;
+          width: 100%;
+        }
+      }
+      @media only screen and (min-width: 600px) {
+        div.lmq-2 {
+          background-color: red;
+        }
+        div.lmq-3 {
+          flex-direction: row;
+        }
+      }
+      @media not screen and (min-width: 600px) and (max-width: 1024px) {
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "email": "user@email.com",
+      "password": "$2a$10$.2byEo9tsUflWFFFYtrA3.Prvglz3evWDOY.7SGahamtB2tdkTgom",
+      "id": 1
+    }
+  ],
+  "posts": [
+    {
+      "title": "react js",
+      "author": "dan abramov",
+      "id": 1
+    },
+    {
+      "title": "vue js",
+      "author": "evan you",
+      "id": 2
+    }
+  ],
+  "tasks": []
+}

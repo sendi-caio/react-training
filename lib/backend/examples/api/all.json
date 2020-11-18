@@ -1,0 +1,460 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Talent Dig React",
+    "version": "1.0",
+    "description": "learn API"
+  },
+  "servers": [
+    {
+      "url": "/v1"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "parameters": {
+      "id": {
+        "name": "id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/id"
+        }
+      }
+    },
+    "headers": {},
+    "examples": {},
+    "links": {},
+    "requestBodies": {
+      "user": {
+        "required": true,
+        "content": {
+          "multipart/form-data": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "$ref": "#/components/schemas/name"
+                },
+                "email": {
+                  "$ref": "#/components/schemas/email"
+                },
+                "avatar": {
+                  "$ref": "#/components/schemas/avatar"
+                }
+              }
+            }
+          }
+        }
+      },
+      "auth": {
+        "required": true,
+        "content": {
+          "application/x-www-form-urlencoded": {
+            "schema": {
+              "$ref": "#/components/schemas/auth"
+            }
+          },
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/auth"
+            }
+          }
+        }
+      },
+      "post": {
+        "required": true,
+        "content": {
+          "application/x-www-form-urlencoded": {
+            "schema": {
+              "$ref": "#/components/schemas/post"
+            }
+          },
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/post"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "email": {
+        "type": "string",
+        "format": "email"
+      },
+      "id": {
+        "type": "string",
+        "format": "number"
+      },
+      "password": {
+        "type": "string",
+        "minimum": 4,
+        "maximum": 8
+      },
+      "name": {
+        "type": "string"
+      },
+      "avatar": {
+        "type": "string",
+        "format": "binary"
+      },
+      "post": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          }
+        }
+      },
+      "auth": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "$ref": "#/components/schemas/email"
+          },
+          "password": {
+            "$ref": "#/components/schemas/password"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "auth",
+      "description": "auth"
+    },
+    {
+      "name": "posts",
+      "description": "posts"
+    },
+    {
+      "name": "comments",
+      "description": "comments"
+    },
+    {
+      "name": "tasks",
+      "description": "tasks"
+    },
+    {
+      "name": "tasks-items",
+      "description": "tasks items"
+    },
+    {
+      "name": "users",
+      "description": "users"
+    }
+  ],
+  "paths": {
+    "/tasks": {
+      "get": {
+        "tags": [
+          "tasks"
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "tasks"
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/tasks/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/id"
+        }
+      ],
+      "delete": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "tasks"
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/tasks-items": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "tasks-items"
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/tasks-items/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/id"
+        }
+      ],
+      "get": {
+        "tags": [
+          "tasks-items"
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "tasks-items"
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "tasks-items"
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/tasks-items/rename/{id}": {
+      "put": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "tasks-items"
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ]
+      }
+    },
+    "/posts": {
+      "get": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "posts"
+        ],
+        "description": "get posts",
+        "responses": {
+          "default": {
+            "description": "get all posts"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "posts"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/post"
+        },
+        "responses": {
+          "201": {
+            "description": "posts created"
+          }
+        }
+      }
+    },
+    "/posts/{id}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/id"
+        }
+      ],
+      "get": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "posts"
+        ],
+        "responses": {
+          "201": {
+            "description": "posts created"
+          }
+        }
+      },
+      "put": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "posts"
+        ],
+        "responses": {
+          "201": {
+            "description": "posts created"
+          }
+        }
+      },
+      "delete": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "tags": [
+          "posts"
+        ],
+        "responses": {
+          "201": {
+            "description": "posts created"
+          }
+        }
+      }
+    },
+    "/upload": {
+      "post": {
+        "tags": [
+          "upload"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "profile": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "posts created"
+          }
+        }
+      }
+    },
+    "/posts/{id}/comments": {
+      "get": {
+        "tags": [
+          "comments"
+        ],
+        "description": "get comments",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ]
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "description": "Registrasi User Baru",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/auth"
+        },
+        "responses": {
+          "201": {
+            "description": "registrasi user sukses"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "description": "Registrasi User Baru",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/auth"
+        },
+        "responses": {
+          "201": {
+            "description": "registrasi user sukses"
+          }
+        }
+      }
+    },
+    "/reset": {
+      "get": {
+        "tags": [
+          "reset"
+        ],
+        "responses": {
+          "201": {
+            "description": "registrasi user sukses"
+          }
+        }
+      }
+    }
+  }
+}
