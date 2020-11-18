@@ -13,8 +13,9 @@
     "build": "webpack --mode production",
     "lint": "eslint --ext .js,.jsx ./src",
     "server:doc": "cross-env BABEL_ENV=doc node lib/cli/doc",
-    "server:backend": "node --trace-deprecation lib/cli/backend",
-    "project": "node lib/cli/project"
+    "server:backend": "node lib/cli/backend",
+    "project": "node lib/cli/project",
+    "cli": "node lib/cli"
   },
   "authors": [
     "dev.esde.be@gmail.com",
